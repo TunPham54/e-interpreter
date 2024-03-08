@@ -36,7 +36,7 @@ def takecommand(dest_lang):
         r.adjust_for_ambient_noise(source)  # Adjust for ambient noise
         audio = r.listen(source)
     try: 
-        print("Recognizing... edit here")
+        print("Recognizing...")
         query = r.recognize_google(audio, language = dest_lang)
         print(f"{query}") 
     except Exception: 
