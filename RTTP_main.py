@@ -45,7 +45,8 @@ def takecommand(dest_lang):
     return query 
 
 def tts(prompt):
- key = open("11_api_key", "r").read()
+ eleven_key_loc = "C:\\Users\\Asus\\Documents\\GPS\\11_api_key" # Put your api's key file path here
+ key = open(eleven_key_loc, "r").read()
  set_api_key(f"{key}")
  audio = generate(
   text=prompt,
@@ -99,7 +100,8 @@ def output_gg_trans(text, to_lang):
      os.remove("trans_voice.mp3")
 
 def main():
- key = open("gpt_api_key", "r").read()
+ gpt_loc = "C:\\Users\\Asus\\Documents\\GPS\\gpt_api_key" # Put your api's key file path here
+ key = open(gpt_loc, "r").read()
  client = OpenAI(api_key=key)
  result_queue = queue.Queue()
  count = 0
