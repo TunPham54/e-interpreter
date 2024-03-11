@@ -13,7 +13,7 @@ import queue
 def gpt_chat_box(from_lang, to_lang, client, prompt):
     # Make a request to the OpenAI API for translation
     chat = f"Translate this piece of text from {from_lang} to {to_lang} (disregard the phonetic transcription): {prompt}"
-    response = client.chat.completions.create(model="gpt-4",
+    response = client.chat.completions.create(model="gpt-3.5-turbo",
     messages = [{"role": "user", "content": chat}])
     return response.choices[0].message.content.strip()
     # Extract the translated text from the API response
